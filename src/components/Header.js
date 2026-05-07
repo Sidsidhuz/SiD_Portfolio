@@ -1,6 +1,8 @@
 import React from 'react';
 
 function Header() {
+  const portraitSrc = `${process.env.PUBLIC_URL}/SiD.jpeg`;
+
   return (
     <section className="hero-panel" id="home">
       <div className="hero-layout">
@@ -27,7 +29,7 @@ function Header() {
 
         <div className="hero-side">
           <div className="hero-photo-card">
-            <img className="hero-photo" src="/SiD.jpeg" alt="Sidharth T V portrait" />
+            <img className="hero-photo" src={portraitSrc} alt="Sidharth T V portrait" />
           </div>
 
           <div className="hero-meta">
