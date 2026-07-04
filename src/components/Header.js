@@ -4,66 +4,54 @@ function Header() {
   const portraitSrc = `${process.env.PUBLIC_URL}/SiD.jpeg`;
 
   return (
-    <section className="hero-panel" id="home">
-      <div className="hero-layout">
-        <div>
-          <p className="eyebrow">AI/ML Engineer - Data Science Enthusiast</p>
-          <h1 className="hero-title">
-            Sidharth T V
-          </h1>
-          <p className="hero-copy">
-            Computer Science graduate specializing in AI/ML, cloud-native deployment, and
-            GenAI-driven solutions. I build practical machine learning systems that move from
-            experimentation to production with clear architecture, measurable results, and clean
-            delivery.
-          </p>
-          <div className="button-row">
-            <a className="button" href="#projects">
-              View Featured Project
-            </a>
-            <a className="button-secondary" href="#contact">
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-side">
-          <div className="hero-photo-card">
-            <img className="hero-photo" src={portraitSrc} alt="Sidharth T V portrait" />
-          </div>
-
-          <div className="hero-meta">
-            <div className="meta-tile">
-              <p className="meta-label">Summary</p>
-              <p className="meta-value">
-                AI/ML Engineer focused on scalable cloud-native solutions, RAG-based LLM
-                applications, and production-ready ML pipelines.
-              </p>
-            </div>
-            <div className="meta-tile">
-              <p className="meta-label">Current Focus</p>
-              <p className="meta-value">
-                AWS SageMaker, Lambda, API Gateway, PyTorch, FastAPI, Docker, and CI/CD.
-              </p>
-            </div>
-            <div className="meta-tile">
-              <p className="meta-label">Location</p>
-              <p className="meta-value">
-                Kannur, Kerala, India
-                <br />
-                Open to relocation
-              </p>
-            </div>
-          </div>
+    <section className="hero-section" id="home">
+      {/* LEFT — Big title */}
+      <div>
+        <p className="hero-eyebrow">AI &amp; DATA SCIENCE</p>
+        <h1 className="hero-title">
+          Sidharth<br />
+          T V<br />
+          <span className="hero-title-shimmer">AI &amp; ML</span><br />
+          Engineer
+        </h1>
+        <p className="hero-copy">
+          Building intelligent solutions with Python, Machine Learning,
+          and Cloud Architecture.
+        </p>
+        <div className="hero-cta-row">
+          <a className="btn" href="#projects">View Projects</a>
+          <a className="btn-ghost" href="#contact">Contact Me</a>
         </div>
       </div>
 
-      <div className="tag-list" style={{ marginTop: '22px' }}>
-        <span className="tag">Cloud-native ML</span>
-        <span className="tag">GenAI</span>
-        <span className="tag">MLOps</span>
-        <span className="tag">RAG</span>
-        <span className="tag">Deployment</span>
+      {/* RIGHT — Profile card */}
+      <div className="hero-card">
+        <div className="hero-avatar">
+          <img src={portraitSrc} alt="Sidharth T V" />
+        </div>
+
+        <p className="hero-highlights-label">Quick Highlights</p>
+        <ul className="hero-highlights-list">
+          <li>AI and data analysis focus</li>
+          <li>Cloud architecture and full-stack builds</li>
+          <li>Open to roles in AI/ML engineering</li>
+        </ul>
+
+        <div className="hero-stats">
+          <div className="stat-box">
+            <div className="stat-value">5+</div>
+            <div className="stat-label">Projects</div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-value">AI/ML</div>
+            <div className="stat-label">Specialization</div>
+          </div>
+          <div className="stat-box">
+            <div className="stat-value">GenAI</div>
+            <div className="stat-label">Focus Area</div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

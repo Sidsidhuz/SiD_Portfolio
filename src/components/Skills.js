@@ -15,33 +15,38 @@ function Skills() {
       items: ['Pandas', 'NumPy', 'Matplotlib', 'EDA', 'FastAPI', 'Django'],
     },
     {
-      title: 'Cloud & Tools',
-      items: ['AWS', 'SageMaker', 'Lambda', 'API Gateway', 'SNS', 'S3', 'Docker', 'CI/CD', 'Linux'],
+      title: 'Cloud & DevOps',
+      items: ['AWS', 'SageMaker', 'Lambda', 'API Gateway', 'S3', 'Docker', 'CI/CD', 'Linux'],
+    },
+    {
+      title: 'GenAI & LLMs',
+      items: ['RAG', 'Ollama', 'LangChain', 'ChromaDB', 'SHAP', 'MLflow'],
+    },
+    {
+      title: 'Tools & Platforms',
+      items: ['Git', 'GitHub', 'DVC', 'Streamlit', 'SQLite', 'SQLAlchemy', 'Pytest'],
     },
   ];
 
   return (
     <section id="skills">
-      <div className="section-header">
-        <div>
-          <p className="eyebrow">Skills</p>
-          <h2 className="section-title">Technical strengths across ML, cloud, and delivery</h2>
-        </div>
-        <p className="section-description">
-          The stack below reflects your resume: applied ML, deep learning, cloud-native inference,
-          and the tooling needed to move a project from notebook to deployment.
-        </p>
+      <p className="section-eyebrow">CAPABILITIES</p>
+      <div className="section-title-row">
+        <h2 className="section-title">Technical <span>Skills</span></h2>
       </div>
+      <div className="section-divider" />
+      <p className="section-desc">
+        Applied ML, deep learning, cloud-native inference, and the tooling needed to move a
+        project from notebook to production.
+      </p>
 
-      <div className="grid-2">
-        {skillGroups.map((group) => (
-          <div className="skill-group" key={group.title}>
-            <p className="meta-label">{group.title}</p>
-            <div className="tag-list">
-              {group.items.map((item) => (
-                <span className="skill-pill" key={item}>
-                  {item}
-                </span>
+      <div className="skills-grid">
+        {skillGroups.map(group => (
+          <div className="skill-group-card" key={group.title}>
+            <p className="skill-group-label">{group.title}</p>
+            <div className="skill-pills">
+              {group.items.map(item => (
+                <span className="skill-pill" key={item}>{item}</span>
               ))}
             </div>
           </div>
