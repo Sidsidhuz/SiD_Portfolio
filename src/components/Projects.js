@@ -33,69 +33,53 @@ const ExternalIcon = () => (
   </svg>
 );
 
-const ICONS = [FolderIcon, ChartIcon, BotIcon];
+const ICONS = [FolderIcon, ChartIcon, BotIcon, FolderIcon];
 
 function Projects() {
   const featuredProjects = [
     {
       title: 'Plant Disease Detection — MLOps',
-      description: 'An end-to-end machine learning system for banana leaf disease classification combining image preprocessing, a custom CNN in PyTorch, experiment tracking, FastAPI serving, Docker, and CI/CD deployment.',
+      description: 'A reproducible computer-vision system that takes a crop image from training data to a deployable disease prediction API.',
       tags: ['Python', 'PyTorch', 'DVC', 'MLflow', 'FastAPI', 'Docker', 'GitHub Actions'],
-      architecture: [
-        'Data collection and preprocessing of banana leaf images.',
-        'Object-oriented PyTorch training pipeline with augmentation.',
-        'DVC for dataset versioning, MLflow for experiment tracking.',
-        'FastAPI REST endpoint for serving predictions via public API.',
-        'Dockerized deployment to Render via GitHub Actions CI/CD.',
-      ],
-      features: [
-        'Custom CNN model for plant disease classification.',
-        'Reproducible experiments with MLflow comparisons.',
-        'Automated delivery through containerized CI/CD pipeline.',
-        'Live REST API for inference and integration.',
-      ],
-      repoUrl: 'https://github.com/Sidsidhuz/CNN_MLOps.git',
-      demoUrl: 'https://cnn-mlops.onrender.com:10000/',
+      problem: 'Crop-disease experiments often remain isolated notebooks, making results difficult to reproduce, compare, and deploy.',
+      contribution: 'I built the modular training pipeline, integrated DVC and MLflow, exposed inference through FastAPI, and containerized delivery.',
+      architecture: ['Leaf dataset', 'DVC pipeline', 'EfficientNet-B0', 'MLflow', 'FastAPI', 'Docker'],
+      decisions: 'Transfer learning reduces training cost; DVC and MLflow preserve reproducibility; FastAPI and Docker make inference portable.',
+      challenge: 'Keeping datasets, model artifacts, experiment results, and the deployed inference contract synchronized.',
+      repoUrl: 'https://github.com/Sidsidhuz/CNN_MLOps',
     },
     {
       title: 'AutoInsight — Local AutoML & Explainable AI',
-      description: 'A no-code, fully local machine learning platform that automatically profiles, cleans, trains multiple ML models, explains predictions using SHAP, and generates downloadable PDF/Excel reports — zero cloud dependencies.',
+      description: 'A private, no-code AutoML workspace that turns raw tabular data into understandable models and downloadable reports.',
       tags: ['Python', 'FastAPI', 'Streamlit', 'scikit-learn', 'XGBoost', 'SHAP', 'SQLite'],
-      architecture: [
-        'Streamlit frontend communicating via REST with FastAPI backend.',
-        'SQLite for local state management and metadata storage.',
-        'AutoML with RandomizedSearchCV across 5+ algorithms.',
-        'SHAP integration for global and per-prediction explanations.',
-        'ReportLab (PDF) and OpenPyXL (Excel) for report generation.',
-      ],
-      features: [
-        'Auto Profiling, Smart Cleaning, and interactive EDA charts.',
-        'Side-by-side model leaderboard ranked by F1-Score or R².',
-        'SHAP waterfall charts explaining individual predictions.',
-        'Batch predictions and downloadable executive summaries.',
-      ],
-      repoUrl: 'https://github.com/Sidsidhuz/Enterprise-Data-Intelligence-Platform.git',
-      demoUrl: null,
+      problem: 'Non-technical users need a guided ML workflow without uploading sensitive business data or stitching together separate tools.',
+      contribution: 'I connected profiling, cleaning, multi-model training, ranking, SHAP explanations, predictions, and reporting into one workflow.',
+      architecture: ['CSV / Excel', 'Validation', 'Smart cleaning', 'AutoML', 'SHAP', 'Reports'],
+      decisions: 'A local-first design protects data; scikit-learn enables consistent pipelines; SHAP makes model decisions interpretable.',
+      challenge: 'Supporting varied schemas and both classification and regression while keeping preprocessing consistent and leakage-safe.',
+      repoUrl: 'https://github.com/Sidsidhuz/Enterprise-Data-Intelligence-Platform',
     },
     {
       title: 'Bot2423 — Local RAG Assistant',
-      description: 'A fully local AI assistant with a web chat interface, persistent memory via RAG and ChromaDB vector search, and on-device voice output. Complete data privacy with zero external API dependencies.',
+      description: 'A private local assistant that combines conversational AI, retrievable memory, and on-device voice output.',
       tags: ['Python', 'FastAPI', 'Ollama', 'ChromaDB', 'Kokoro-ONNX', 'HTML/JS'],
-      architecture: [
-        'FastAPI backend handling requests and serving static assets.',
-        'Ollama integration running the gemma3:latest model locally.',
-        'ChromaDB vector database for storing personalized facts.',
-        'Kokoro ONNX engine for fast, local text-to-speech generation.',
-        'Vanilla JS frontend for seamless chat and audio playback.',
-      ],
-      features: [
-        'Web-based chat communicating with a local LLM.',
-        'Fact ingestion tool for personalized memory via RAG.',
-        'Context-aware responses using vector retrieval.',
-        'In-browser voice playback of assistant responses.',
-      ],
+      problem: 'Cloud assistants trade privacy for convenience and often lack durable, user-controlled personal memory.',
+      contribution: 'I built the FastAPI service, Ollama integration, ChromaDB memory retrieval, local TTS pipeline, and browser chat experience.',
+      architecture: ['Browser', 'FastAPI', 'ChromaDB retrieval', 'Ollama', 'Kokoro TTS', 'Audio reply'],
+      decisions: 'Ollama keeps inference local, vector retrieval grounds responses in stored facts, and ONNX enables efficient offline speech.',
+      challenge: 'Coordinating retrieval, generation, memory updates, and audio playback while keeping the entire path local and responsive.',
       repoUrl: 'https://github.com/Sidsidhuz/Local_Vector_RAG',
-      demoUrl: null,
+    },
+    {
+      title: 'AgroLink — Digital Farm Community',
+      description: 'A responsive agricultural platform combining community knowledge, seasonal planning, local weather, alerts, diaries, messaging, and crop diagnosis.',
+      tags: ['Python', 'FastAPI', 'SQLAlchemy', 'AsyncIO', 'Computer Vision', 'Weather API'],
+      problem: 'Farmers need community knowledge, seasonal decisions, and crop-health support without switching between disconnected services.',
+      contribution: 'I designed the product experience and async backend, separated routes from services and repositories, and integrated planning, weather, community, and diagnosis flows.',
+      architecture: ['Web client', 'FastAPI API', 'Service layer', 'Async SQLAlchemy', 'Weather + ML', 'Alerts'],
+      decisions: 'Async FastAPI supports concurrent I/O, service boundaries keep business logic maintainable, and location-aware features make advice locally relevant.',
+      challenge: 'Combining social, planning, geospatial, weather, and ML features while preserving identity consistency and a calm mobile interface.',
+      repoUrl: 'https://github.com/Sidsidhuz/Agro_Link_',
     },
   ];
 
@@ -103,11 +87,8 @@ function Projects() {
     { title: 'sagemaker_model_deployment', summary: 'AWS-based model deployment focused on production inference and cloud delivery.', tech: 'Python, AWS SageMaker', repo: 'https://github.com/Sidsidhuz/sagemaker_model_deplyment' },
     { title: 'sahayi', summary: 'A service marketplace concept with geolocation-based matching and payment integration.', tech: 'FastAPI, SQLite, Payments', repo: 'https://github.com/Sidsidhuz/sahayi' },
     { title: 'Ai_Tutor_Mascot', summary: 'A voice-assisted tutoring project exploring conversational AI and retrieval-based learning.', tech: 'Python, LLMs, RAG', repo: 'https://github.com/Sidsidhuz/Ai_Tutor_Mascot' },
-    { title: 'AgroLink', summary: 'A digital farm community for sharing field knowledge, planning seasons, diagnosing crops, and warning nearby growers.', tech: 'FastAPI, SQLAlchemy, ML', repo: 'https://github.com/Sidsidhuz/Agro_Link_' },
     { title: 'Chatbot', summary: 'A Python chatbot focused on conversational interaction and utility-style automation.', tech: 'Python, Automation', repo: 'https://github.com/Sidsidhuz/Chatbot' },
     { title: 'BLUbit', summary: 'A Java-based project demonstrating application logic and software development fundamentals.', tech: 'Java, Application Dev', repo: 'https://github.com/Sidsidhuz/BLUbit' },
-    { title: 'Neural Voice XTTS', summary: 'Experimental neural text-to-speech and voice cloning exploration project.', tech: 'Python, XTTS, Audio', repo: '#' },
-    { title: 'Fantasy Cric Prediction', summary: 'A machine learning project for predicting fantasy cricket team outcomes.', tech: 'Python, ML, Sports Data', repo: '#' },
   ];
 
   return (
@@ -150,26 +131,39 @@ function Projects() {
                 {proj.tags.map(t => <span className="project-tag" key={t}>{t}</span>)}
               </div>
 
-              <div className="project-card-body">
-                <div className="project-detail-block">
-                  <p className="project-detail-label">Architecture</p>
-                  <ul className="project-detail-list">
-                    {proj.architecture.map(a => <li key={a}>{a}</li>)}
-                  </ul>
+              <div className="project-case-grid">
+                <div className="project-case-block">
+                  <p className="project-detail-label"><span>01</span> Problem</p>
+                  <p>{proj.problem}</p>
                 </div>
-                <div className="project-detail-block">
-                  <p className="project-detail-label">Key Features</p>
-                  <ul className="project-detail-list">
-                    {proj.features.map(f => <li key={f}>{f}</li>)}
-                  </ul>
+                <div className="project-case-block">
+                  <p className="project-detail-label"><span>02</span> My contribution</p>
+                  <p>{proj.contribution}</p>
+                </div>
+                <div className="project-case-block">
+                  <p className="project-detail-label"><span>03</span> Technology choices</p>
+                  <p>{proj.decisions}</p>
+                </div>
+                <div className="project-case-block">
+                  <p className="project-detail-label"><span>04</span> Hardest challenge</p>
+                  <p>{proj.challenge}</p>
+                </div>
+              </div>
+
+              <div className="project-architecture">
+                <div className="project-architecture-title"><span>System flow</span><small>Architecture at a glance</small></div>
+                <div className="project-architecture-flow">
+                  {proj.architecture.map((step, index) => (
+                    <React.Fragment key={step}>
+                      <span className="architecture-node">{step}</span>
+                      {index < proj.architecture.length - 1 && <span className="architecture-arrow" aria-hidden="true">→</span>}
+                    </React.Fragment>
+                  ))}
                 </div>
               </div>
 
               <div className="project-card-actions">
                 <a className="btn-ghost" href={proj.repoUrl} target="_blank" rel="noreferrer">GitHub</a>
-                {proj.demoUrl && (
-                  <a className="btn" href={proj.demoUrl} target="_blank" rel="noreferrer">Live Demo</a>
-                )}
               </div>
             </article>
           );

@@ -3,8 +3,8 @@ import React from 'react';
 function Navbar({ theme, toggleTheme }) {
   const links = [
     { label: 'HOME',     href: '#home' },
-    { label: 'JARVIS',   href: '#jarvis' },
     { label: 'PROJECTS', href: '#projects' },
+    { label: 'SPOTLIGHT', href: '#jarvis' },
     { label: 'ABOUT',    href: '#about' },
     { label: 'CONTACT',  href: '#contact' },
   ];

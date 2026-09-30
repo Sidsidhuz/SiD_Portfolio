@@ -103,15 +103,19 @@ function JarvisSpotlight() {
       <div className="jarvis-engineering-grid">
         <article>
           <span>01</span>
-          <div><strong>Conversational layer</strong><p>Python and a local Ollama model grounded in curated college and creator knowledge.</p></div>
+          <div><strong>Problem</strong><p>Give the college an embodied assistant that could answer campus-specific questions and move through a physical space.</p></div>
         </article>
         <article>
           <span>02</span>
-          <div><strong>Physical locomotion</strong><p>Remote-controlled Raspberry Pi movement powered by heavy-duty servo motors.</p></div>
+          <div><strong>My contribution</strong><p>I built the Python and Ollama knowledge layer and the Raspberry Pi remote-control path for heavy-duty servo locomotion.</p></div>
         </article>
         <article>
           <span>03</span>
-          <div><strong>Real-world presence</strong><p>Designed as a campus robot that could speak about the people and place that created it.</p></div>
+          <div><strong>Technology choices</strong><p>Local Ollama kept curated college knowledge self-contained, while Raspberry Pi offered practical, accessible motor control.</p></div>
+        </article>
+        <article>
+          <span>04</span>
+          <div><strong>Hardest challenge</strong><p>Coordinating grounded conversation with high-torque physical movement in a stable, presentable campus robot.</p></div>
         </article>
       </div>
 
