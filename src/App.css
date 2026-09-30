@@ -4,6 +4,7 @@
 .app-shell {
   min-height: 100vh;
   position: relative;
+  overflow-x: clip;
 }
 
 /* Star Canvas Background */
@@ -431,6 +432,309 @@ section { margin-bottom: 120px; }
   line-height: 1.7;
   margin-bottom: 48px;
 }
+
+/* ═══════════════════════════════════════════
+   JARVIS ROBOTICS SPOTLIGHT
+═══════════════════════════════════════════ */
+.jarvis-section {
+  position: relative;
+  scroll-margin-top: 110px;
+}
+
+.navbar-spacer { width: 44px; flex: 0 0 44px; }
+
+.jarvis-section::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -240px;
+  top: 90px;
+  border-radius: 50%;
+  background: rgba(106, 140, 26, 0.14);
+  filter: blur(110px);
+  pointer-events: none;
+}
+
+.jarvis-heading {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 520px);
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 42px;
+}
+
+.jarvis-heading-copy {
+  color: var(--text-mid);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  padding-bottom: 5px;
+}
+
+.jarvis-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  min-height: 610px;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius-card) + 4px);
+  overflow: hidden;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  z-index: 1;
+}
+
+.jarvis-visual {
+  min-height: 610px;
+  position: relative;
+  overflow: hidden;
+  background: #12150e;
+}
+
+.jarvis-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.jarvis-stage:hover .jarvis-main-photo { transform: scale(1.035); }
+
+.jarvis-photo-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 10, 4, 0.05) 45%, rgba(7, 10, 4, 0.78) 100%);
+  pointer-events: none;
+}
+
+.jarvis-visual-label {
+  position: absolute;
+  left: 26px;
+  bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border-radius: var(--radius-pill);
+  color: #f5f7ef;
+  background: rgba(12, 16, 7, 0.7);
+  border: 1px solid rgba(255,255,255,0.22);
+  backdrop-filter: blur(12px);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.jarvis-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c8e05a;
+  box-shadow: 0 0 0 5px rgba(200,224,90,0.13);
+  animation: jarvisPulse 2s ease-in-out infinite;
+}
+
+@keyframes jarvisPulse {
+  50% { box-shadow: 0 0 0 9px rgba(200,224,90,0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jarvis-live-dot,
+  .jarvis-main-photo,
+  .jarvis-media-image img { animation: none; transition: none; }
+}
+
+.jarvis-year-mark {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  color: rgba(255,255,255,0.92);
+  font-size: 4.4rem;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+
+.jarvis-story {
+  padding: clamp(34px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jarvis-kicker {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  margin-bottom: 17px;
+}
+
+.jarvis-story h3 {
+  color: var(--text);
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+}
+
+.jarvis-story > p:not(.jarvis-kicker) {
+  color: var(--text-mid);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.jarvis-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 28px;
+}
+
+.jarvis-tags span {
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 6px 11px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.jarvis-team {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 15px;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.jarvis-team img {
+  width: 82px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.jarvis-team div { display: flex; flex-direction: column; gap: 3px; }
+.jarvis-team span { color: var(--accent); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.13em; }
+.jarvis-team strong { color: var(--text); font-size: 0.9rem; }
+.jarvis-team small { color: var(--text-muted); font-size: 0.72rem; line-height: 1.35; }
+
+.jarvis-engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.jarvis-engineering-grid article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.jarvis-engineering-grid article > span {
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding-top: 2px;
+}
+
+.jarvis-engineering-grid strong { display: block; color: var(--text); font-size: 0.9rem; margin-bottom: 7px; }
+.jarvis-engineering-grid p { color: var(--text-muted); font-size: 0.8rem; line-height: 1.55; }
+
+.jarvis-press-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 78px 0 28px;
+}
+
+.jarvis-press-heading h3 { color: var(--text); font-size: 1.85rem; letter-spacing: -0.025em; }
+.jarvis-press-heading > p { color: var(--text-muted); font-size: 0.9rem; }
+
+.jarvis-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.jarvis-media-card {
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.jarvis-media-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(65,91,6,0.14); }
+
+.jarvis-media-image {
+  height: 185px;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+}
+
+.jarvis-media-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.jarvis-media-card:first-child .jarvis-media-image img { object-position: center top; }
+.jarvis-media-card:hover .jarvis-media-image img { transform: scale(1.04); }
+
+.jarvis-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(245,247,239,0.92);
+  color: #26350a;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+}
+
+.jarvis-play svg { width: 21px; height: 21px; fill: currentColor; }
+
+.jarvis-media-copy { padding: 20px; }
+.jarvis-media-meta { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 12px; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.jarvis-media-meta span { color: var(--accent); }
+.jarvis-media-meta time { color: var(--text-muted); }
+.jarvis-media-copy > strong { color: var(--text); font-size: 0.96rem; line-height: 1.45; display: block; min-height: 2.9em; }
+.jarvis-media-action { color: var(--text-muted); display: inline-flex; align-items: center; gap: 5px; margin-top: 17px; font-size: 0.76rem; font-weight: 700; }
+.jarvis-media-action svg, .jarvis-source-note svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.jarvis-media-card:hover .jarvis-media-action { color: var(--accent); }
+
+.jarvis-source-note {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.jarvis-source-note a { color: var(--accent); display: inline-flex; align-items: center; gap: 3px; font-weight: 700; }
 
 /* ═══════════════════════════════════════════
    PROJECTS SECTION
@@ -1040,6 +1344,11 @@ section { margin-bottom: 120px; }
   .about-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .small-projects-grid { grid-template-columns: 1fr; }
+  .jarvis-heading { grid-template-columns: 1fr; gap: 18px; }
+  .jarvis-stage { grid-template-columns: 1fr; }
+  .jarvis-visual { min-height: 470px; }
+  .jarvis-engineering-grid { grid-template-columns: 1fr; }
+  .jarvis-media-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -1050,6 +1359,18 @@ section { margin-bottom: 120px; }
   .hero-stats { grid-template-columns: repeat(3, 1fr); }
   .project-card-featured { padding: 24px; }
   .project-card-body { grid-template-columns: 1fr; }
-  .navbar { padding: 14px 16px; }
-  .nav-pill-link { padding: 8px 12px; font-size: 0.65rem; }
+  .navbar { padding: 10px 8px; gap: 8px; }
+  .navbar-spacer { display: none; }
+  .navbar-pill { flex: 1; min-width: 0; margin: 0; padding: 5px; justify-content: center; }
+  .nav-pill-link { padding: 8px 7px; font-size: 0.56rem; }
+  .theme-toggle-btn { width: 40px; height: 40px; flex: 0 0 40px; }
+  .jarvis-stage { min-height: 0; }
+  .jarvis-visual { min-height: 340px; }
+  .jarvis-story { padding: 28px 22px; }
+  .jarvis-year-mark { font-size: 3.2rem; }
+  .jarvis-team { grid-template-columns: 68px 1fr; }
+  .jarvis-team img { width: 68px; height: 58px; }
+  .jarvis-press-heading { align-items: flex-start; flex-direction: column; margin-top: 58px; }
+  .jarvis-media-grid { grid-template-columns: 1fr; }
+  .jarvis-media-image { height: 210px; }
 }

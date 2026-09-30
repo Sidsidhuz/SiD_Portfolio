@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
+import JarvisSpotlight from './components/JarvisSpotlight';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -30,6 +31,7 @@ function App() {
 
       <main>
         <Header />
+        <JarvisSpotlight />
         <Projects />
         <Skills />
         <About />

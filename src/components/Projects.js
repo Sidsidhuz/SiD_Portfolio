@@ -94,7 +94,7 @@ function Projects() {
         'Context-aware responses using vector retrieval.',
         'In-browser voice playback of assistant responses.',
       ],
-      repoUrl: 'https://github.com/Sidsidhuz/RAG.git',
+      repoUrl: 'https://github.com/Sidsidhuz/Local_Vector_RAG',
       demoUrl: null,
     },
   ];
@@ -103,7 +103,7 @@ function Projects() {
     { title: 'sagemaker_model_deployment', summary: 'AWS-based model deployment focused on production inference and cloud delivery.', tech: 'Python, AWS SageMaker', repo: 'https://github.com/Sidsidhuz/sagemaker_model_deplyment' },
     { title: 'sahayi', summary: 'A service marketplace concept with geolocation-based matching and payment integration.', tech: 'FastAPI, SQLite, Payments', repo: 'https://github.com/Sidsidhuz/sahayi' },
     { title: 'Ai_Tutor_Mascot', summary: 'A voice-assisted tutoring project exploring conversational AI and retrieval-based learning.', tech: 'Python, LLMs, RAG', repo: 'https://github.com/Sidsidhuz/Ai_Tutor_Mascot' },
-    { title: 'Agro_Link', summary: 'A farmer-to-consumer platform built around agricultural commerce and direct selling.', tech: 'JavaScript, Web App', repo: 'https://github.com/Sidsidhuz/Agro_Link_' },
+    { title: 'AgroLink', summary: 'A digital farm community for sharing field knowledge, planning seasons, diagnosing crops, and warning nearby growers.', tech: 'FastAPI, SQLAlchemy, ML', repo: 'https://github.com/Sidsidhuz/Agro_Link_' },
     { title: 'Chatbot', summary: 'A Python chatbot focused on conversational interaction and utility-style automation.', tech: 'Python, Automation', repo: 'https://github.com/Sidsidhuz/Chatbot' },
     { title: 'BLUbit', summary: 'A Java-based project demonstrating application logic and software development fundamentals.', tech: 'Java, Application Dev', repo: 'https://github.com/Sidsidhuz/BLUbit' },
     { title: 'Neural Voice XTTS', summary: 'Experimental neural text-to-speech and voice cloning exploration project.', tech: 'Python, XTTS, Audio', repo: '#' },
